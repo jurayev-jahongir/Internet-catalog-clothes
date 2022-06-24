@@ -1,0 +1,34 @@
+<footer class="footer" id="footer">
+            <div class="container">
+                <div class="footer-info row">
+                    <div class="magazin col-4">
+                        <h2 class="footer-title">О Магазине</h2>
+                        {% for our in ours %}
+                        <p class="text-color">{{our.name}}!</p>
+                        {% endfor %}
+                    </div>
+                    <div class="categories col-4">
+                        <h2 class="footer-title">Категории</h2>
+                        <div class="footer-buttons">
+                            {% for category in categories %}
+                            <a href="{% url 'category_detail' category.slug %}">
+                            <button class="btn btn-dark">{{category.name}}</button>
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="mailings col-4">
+                        <h2 class="footer-title">Ориентир</h2>
+                        {% for our in ours %}
+                        <p class="text-color">{{our.text}}/p>
+                            {% endfor %}
+<!--                        <form class="footer-form" method="post">-->
+<!--                            {% csrf_token %}-->
+<!--                            <input type="text" class="footer-input" placeholder="Ваша почта" name="number">-->
+<!--                            <button class="bt nbtn-dark footer-follow" type="submit">Заказать</button>-->
+<!--                        </form>-->
+                    </div>
+                </div>
+
+            </div>
+</footer>

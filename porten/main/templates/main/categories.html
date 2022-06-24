@@ -1,0 +1,27 @@
+{% extends 'wrapper.html' %}
+{% block title %} Последние коллекции {% endblock %}
+{% block content %}
+{% include 'blocks/header.html' %}
+     <section class="main-section">
+            <div class="container">
+                <div class="categories-bar row">
+                    {% for category in page_object %}
+
+                    <div class="receipts-watch col-3">
+                        <a href="{% url 'category_detail' category.slug%}">
+                        <img src="{{category.img.url}}" class="card-img-top" alt="watch">
+                        </a>
+                        <div class="card-body">
+                            <div class="watch-info">
+                                <h4 class="watch-name">{{category.name}}</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+                </div>
+
+            </div>
+        </section>
+
+{% endblock %}

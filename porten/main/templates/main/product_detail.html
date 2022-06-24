@@ -1,0 +1,52 @@
+{% extends 'wrapper.html' %}
+{% block title %} {{product.name}} {% endblock %}
+{% block content %}
+{% include 'blocks/product_header.html' %}
+<!--  <section class="container main-section">-->
+<!--            <div class="products-bar">-->
+<!--                <div class="products-bar__item">-->
+<!--                    <div class="receipts-watch">-->
+<!--                        <img src="{{product.img.url}}" class="card-img-top" alt="watch">-->
+<!--                        <div class="card-body">-->
+<!--                            <div class="watch-info">-->
+<!--                                <h4 class="watch-name">{{product.name}}</h4>-->
+<!--                                    <h4 class="watch-price">{{product.price}}</h4>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="product-info">-->
+<!--                        {{product.text}}-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+
+
+<!--  </section>-->
+ <div class="container-fluid">
+
+
+        <!-- Main section-->
+        <section class="container main-section">
+            <div class="products-bar">
+                <div class="products-bar__item">
+                    <div class="receipts-watch">
+                        <img src="{{product.img.url}}" class="card-img-top" alt="watch" align="left">
+                        <div class="card-body">
+                            <div class="watch-info">
+                                <h4 class="watch-name">{{product.name}}</h4>
+                                    <h4 class="watch-price">{{product.price}} сум.</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        {{product.text}}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- /Main section-->
+
+
+
+{% endblock %}

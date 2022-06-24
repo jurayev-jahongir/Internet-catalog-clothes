@@ -1,0 +1,115 @@
+
+.main-section {
+    background-image: url(../img/Rectangle\ 3.jpg);
+    height: 600px;
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+.main-section__box {
+    border: 2px solid white;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.main-section__brand {
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-section__brand img {
+    width: 145px;
+}
+.main-section__city {
+    color: white;
+    text-transform: uppercase;
+}
+.main-section__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: white;
+    width: 600px;
+    text-align: center;
+}
+
+/* Sezon */
+.sezon {
+    padding-top: 100px;
+}
+.sezon-watches {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+.sezon-watch {
+    background-color: black;
+    margin: 0 10px;
+}
+.card-img-top {
+    width: 200px;
+    background-color: #191B1C;
+}
+.watch-name {
+    font-size: 18px;
+    color: white;
+}
+.watch-price {
+    font-size: 16px;
+    color: white;
+}
+.new-sezon {
+    background-image: url(../img/Rectangle\ 8.jpg);
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.new-sezon_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Collection */
+.collection-img img  {
+    width: 100%;
+}
+.collection-info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.collection-info > p{
+    text-align: center;
+    width: 70%;
+}
+
+/* receipts styles */
+.receipts {
+    padding: 100px 0;
+}
+
+/* brends logo */
+.brends {
+    background-color: #0F0F0F;
+    padding: 50px 0;
+}
+.brends-logo img {
+    width: 250px;
+}
+
+.b{
+    color: white;
+
+}

@@ -1,0 +1,169 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block title %} Home {% endblock %}
+{% block content %}
+{% include 'blocks/main_header.html' %}
+<div class="container-fluid">
+
+
+        <section class="main-section">
+            {% for m in main %}
+            <div class="main-section__box">
+                <div class="main-section__brand">
+                    <img src="{% static 'img/PORTEN.png' %}" alt="main-brand">
+                </div>
+
+                <div class="main-section__city">
+                    {{m.name}}
+                </div>
+            </div>
+            <div class="main-section__text text-color">
+                <p>
+                    {{m.text}}
+                </p>
+            </div>
+            {% endfor %}
+        </section>
+
+        <section id="sezon" class="sezon row">
+            <div class="sezon-2020 col-7 row">
+                <h1 class="section-title">{{category.name}} </h1>
+                <div class="white-line"></div>
+                <div class="sezon-watches col-12 row">
+                    {% for product in page_object_category %}
+                    <div class="sezon-watch col-3">
+                        <a href="{% url 'product_detail' product.category.slug product.id %}">
+                        <img src="{{product.img.url}}" class="card-img-top" alt="watch">
+                        </a>
+                        <div class="card-body">
+                            <div class="watch-info">
+                                <h4 class="watch-name">{{product.name}}</h4>
+                                    <h4 class="watch-price">{{product.price}} сум</h4>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+<!--                    <div class="sezon-watch col-3">-->
+<!--                        <img src="./img/62050 1.png" class="card-img-top" alt="watch">-->
+<!--                        <div class="card-body">-->
+<!--                            <div class="watch-info">-->
+<!--                                <h4 class="watch-name">Louis XVI ATHOS</h4>-->
+<!--                                    <h4 class="watch-price">165 000 руб.</h4>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    -->
+<!--                    <div class="sezon-watch col-3">-->
+<!--                        <img src="./img/62050 1.png" class="card-img-top" alt="watch">-->
+<!--                        <div class="card-body">-->
+<!--                            <div class="watch-info">-->
+<!--                                <h4 class="watch-name">Louis XVI ATHOS</h4>-->
+<!--                                    <h4 class="watch-price">165 000 руб.</h4>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    -->
+                </div>
+            </div>
+            <div class="new-sezon col-5">
+                <div class="new-collection">
+                    <h1 class="section-title">Новая коллекция</h1>
+                    <div class="white-line"></div>
+                    <div class="new-sezon_btn">
+                        <a href="{% url 'categories' %}">
+                        <button class="btn">Каталог</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="collection row" id="collection">
+            <div class="collection-img col-5">
+                <img src="{{category_2.img.url}}" alt="suit">
+            </div>
+
+            <div class="collection-info col-7">
+                <h1 class="section-title">{{category_2.name}}</h1>
+                <div class="white-line"></div>
+                <p class="text-color">{{category_2.text}}</p>
+                <div class="collection-btn">
+                    <a href="{% url 'category_detail' category_2.slug %}">
+                    <button class="btn">Посмотреть коллекцию</button>
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="receipts" id="receipts">
+            <div class="container">
+                <h1 class="section-title">Новые поступления</h1>
+                <div class="white-line"></div>
+
+                <div class="receipts-watches row">
+                     {% for product in page_object %}
+                    <div class="receipts-watch col-3">
+                        <a href="{% url 'product_detail' product.category.slug product.id %}" >
+                        <img src="{{product.img.url}}" class="card-img-top" alt="watch">
+                        </a>
+                        <div class="card-body">
+                            <div class="watch-info">
+                                <h4 class="watch-name">{{product.name}}</h4>
+                                    <h4 class="watch-price">{{product.price}}</h4>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+
+        </section>
+
+        <section class="brends" id="brends">
+            <div class="container">
+                <h1 class="section-title">Наши бренды</h1>
+
+                <div class="white-line"></div>
+                <div class="brends-logo row">
+
+                    {% for category in categories %}
+                    <div class="col-3">
+
+                        <a href="{% url 'category_detail' category.slug %}">
+                        <img src="{{category.img.url}}" alt="logo">
+                            <p class = "b">{{category.name}}</p>
+
+                        </a>
+
+                    </div>
+                    {% endfor %}
+
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="rights">
+            <div class="container">
+                <p class="text-color">© 2022 Все права защищены</p>
+                <p class="text-color">Созданно бэкенд разработчиком Жураев Жахонгиром из web-studio <img src="{% static 'img/Group_12_McYnn6O.png' %}"> </p>
+            </div>
+
+        </div>
+
+        <!-- Season-->
+        <section class="season">
+
+        </section>
+
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'wrapper.html' %}
+{% block title %} {{category.name}} {% endblock %}
+{% block content %}
+{% include 'blocks/header.html' %}
+      <!-- Main section-->
+        <section class="main-section">
+            <div class="container">
+                <div class="categories-bar row">
+                    {% for product in products%}
+                    <div class="receipts-watch col-3">
+                        <a href="{% url 'product_detail' product.category.slug product.id %}">
+                        <img src="{{product.img.url}}" class="card-img-top" alt="watch">
+                        </a>
+                        <div class="card-body">
+                            <div class="watch-info">
+                                <h4 class="watch-name">{{product.name}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </section>
+        <!-- /Main section-->
+
+
+{% endblock%}

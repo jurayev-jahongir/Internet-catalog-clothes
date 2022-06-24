@@ -1,0 +1,35 @@
+{% load static %}
+
+ <header class="header">
+            <div class="container">
+                <div class="header-items row">
+                    <div class="header-brand col-6">
+                        <a href="{% url 'home' %}">
+                        <img src="{% static 'img/PORTEN.png' %}" alt="logo">
+                        </a>
+                    </div>
+                    <nav class="nav col-6">
+
+                        <select class="form-select" onchange="window.location.href=this.options[this.selectedIndex].value" aria-label="Default select example">
+                            <option value="{% url 'home' %}" selected>Бренды</option>
+                            {% for category in categories %}
+                            <option value="{% url 'category_detail' category.slug %}">{{category.name}}</option>
+                            {% endfor %}
+                        </select>
+                        <ul class="nav-items">
+                            <li class="nav-item"><a class="text-color" href="{{telegram.network}}"><i
+                                        class="fa-brands fa-telegram"></i></a></li>
+                            <li class="nav-item"><a class="text-color" href="{{instagram.network}}"><i
+                                        class="fa-brands fa-instagram-square"></i></a></li>
+                            <li class="nav-item"><a class="text-color" href="{{facebook.network}}"><i
+                                        class="fa-brands fa-facebook"></i></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header-chapter">
+                    <span>Главная/</span>
+                    <span>{{category.name}}</span>
+                </div>
+            </div>
+        </header>
+        <!-- Header -->

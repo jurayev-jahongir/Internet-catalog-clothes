@@ -1,0 +1,22 @@
+.main-section {
+    padding: 100px 0;
+}
+
+.categories-bar {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.card-img-top {
+    max-width: 250px;
+    height: 200px;
+    background-color: #191B1C;
+}
+.watch-name {
+    font-size: 18px;
+    color: white;
+}
+.watch-price {
+    font-size: 16px;
+    color: white;
+}
